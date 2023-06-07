@@ -1,0 +1,291 @@
+:root {
+  --wba-blue: #91aedb;
+  --wba-green: #8fc73e;
+  --wba-dgreen: #43beac;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* border: 1px solid #333; */
+  font-family: Roboto, arial, SimSun, "Microsoft YaHei", sans-serif;;
+}
+body {
+  display: flex;
+  height: 100vh;
+}
+
+body > div.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+/* Inside Main */
+div.main > * {
+  display: flex;
+  width: 100%;
+}
+
+div.main > nav.top {
+  padding: 2px 10px;
+  border-bottom: 2px solid var(--wba-blue);
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* SOP Logo */
+nav.top > #logo {
+  padding: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+nav.top > #current {
+  font-size: 1.1em;
+  /* background-color: var(--wba-green); */
+  padding: 3px 8px;
+  border-radius: 6px;
+  background-color: #8fc73e70;
+}
+
+nav.top > #ctrls {
+  display: flex;
+}
+
+/* Attachments */
+nav.top > #attachs {
+  /* display: flex; */
+  position: relative;
+  user-select: none;
+  font-size: 0.9em;
+  border-bottom: 1px solid #333;
+  display: none;
+}
+
+nav.top > #attachs.attach {
+  display: flex;
+}
+
+nav.top > #attachs > span {
+  padding: 5px 5px 4px 5px;
+  cursor: pointer;
+}
+
+
+#attachs > div.attach_list {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  min-width: 100%;
+  background-color: aliceblue;
+  padding: 5px;
+  border: 2px solid var(--wba-blue);
+  /* display: flex; */
+  flex-direction: column;
+}
+
+#attachs:focus > div.attach_list {
+  display: flex;
+}
+
+#attachs > div.attach_list > div.attach {
+  outline: none;
+  border: none;
+  padding: 5px;
+  margin: 2px 0;
+  /* word-break: keep-all; */
+  display: flex;
+  min-width: 270px;
+  max-width: 25vw;
+  justify-content: space-between;
+  /* white-space: nowrap; */
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+div.attach_list > div.attach:hover {
+  background-color: var(--wba-dgreen);
+  color: #fff;
+}
+
+div.attach_list > div.attach:hover > span.downAttach {
+  border-color: #fff;
+}
+
+div.attach_list > div.attach > span {
+  padding: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+div.attach_list > div.attach > span.openAttach {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  margin-right: 15px;
+  max-width: 230px;
+}
+
+div.attach_list > div.attach > span.downAttach {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bolder;
+  border: 1px solid var(--wba-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+#ctrls > span {
+  color: var(--wba-green);
+  padding: 3px 8px;
+  margin: 0 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.8em;
+  background-color: #8fc73e08;
+  border: 1px solid var(--wba-green);
+}
+
+div.main > div.page {
+  height: 100%;
+}
+
+
+/* left Index */
+div.page > nav.left {
+  padding: 10px;
+  min-width: 20vw;
+  max-width: 300px;
+  border-right: 2px solid var(--wba-blue);
+  /* border-top: 2px solid var(--wba-blue); */
+}
+nav.left > span {
+  font-size: 1.5em;
+  padding: 5px;
+  display: flex;
+}
+
+#index ul {
+  /* padding: 0 0 0 5px; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-end; */
+  width: 100%;
+  border: none;
+  /* background-color: var(--wba-blue); */
+}
+
+
+#index ul > li {
+  display: flex;
+  flex-direction: column;
+  /* padding: 2px 5px; */
+  /* margin: 2px 0; */
+  border: none;
+  list-style-type: none;
+  /* align-items: flex-end; */
+  width: 100%;
+  position: relative;
+  background-color: var(--wba-blue);
+  font-weight: normal;
+}
+
+#index ul > li > span {
+  border: 2px solid transparent;
+}
+
+#index ul > li:hover {
+  /* background-color: #8fc73e05; */
+  /* border: 1px solid var(--wba-dgreen); */
+}
+
+#index ul > li > span:hover {
+  /* background-color: #0000000f; */
+  border: 2px solid var(--wba-dgreen);
+}
+
+/* all sub index */
+nav.left > #index li > ul {
+  /* color: #f00 !important; */
+  display: none; /* only show if li have .active class */
+  /* background-color: #ffffff95; */
+}
+
+#index li > ul > li {
+  background-color: #ffffff95;
+
+}
+
+#index ul > li.active {
+  font-weight: bold;
+}
+
+#index ul > li.active > ul {
+  display: flex;
+}
+
+
+
+
+#index ul > li > span {
+  display: flex;
+  /* padding: 5px 0; */
+  width: 100%;
+  padding: 5px 5px 5px 25px;
+  position: relative;
+}
+
+#index ul > li.haveChild > span:before {
+  content: "\276F";
+  display: flex;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 0;
+  top: 50%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* border: 1px solid #333; */
+  transform: translate(0,-50%);
+}
+
+#index ul > li.active > span:before {
+  height: 20px;
+  width: 20px;
+  transform: translate(0,-50%) rotate(90deg);
+}
+
+
+#index a, #index a:visited, #index a:active {
+  display: flex;
+  /* width: 100%; */
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+#index a:hover {
+  text-decoration: underline;
+}
+
+div.page > div.sop {
+  display: flex;
+  width: 100%;
+  /* border: 1px solid #333; */
+}
+
+div.sop > iframe {
+  width: 100%;
+  border: none;
+  outline: none;
+}
